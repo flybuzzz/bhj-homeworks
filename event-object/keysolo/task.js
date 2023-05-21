@@ -91,4 +91,29 @@ class Game {
 }
 
 new Game(document.getElementById('game'))
+        'youtube',
+        'popcorn',
+        'cinema',
+        'love',
+        'javascript'
+      ],
+      index = Math.floor(Math.random() * words.length);
+
+    return words[index];
+  }
+
+  renderWord(word) {
+    const html = [...word]
+      .map(
+        (s, i) =>
+          `<span class="symbol ${i === 0 ? 'symbol_current': ''}">${s}</span>`
+      )
+      .join('');
+    this.wordElement.innerHTML = html;
+
+    this.currentSymbol = this.wordElement.querySelector('.symbol_current');
+  }
+}
+
+new Game(document.getElementById('game'))
 
