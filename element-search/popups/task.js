@@ -1,5 +1,3 @@
-'use strict';
-
 const modalMain = document.getElementById('modal_main');
 const modalCloses = document.querySelectorAll('.modal__close');
 const modal = document.getElementsByClassName('modal');
