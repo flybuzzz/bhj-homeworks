@@ -1,15 +1,13 @@
-const menuSubs = document.querySelectorAll('.menu_sub');
-const menuItem = document.querySelectorAll('.menu__item');
-const menuLinks = document.querySelectorAll('.menu__link');
 
+const listItems = Array.from(document.querySelectorAll(".menu__item"));
 
-
-menuItem.forEach(el => {
-    el.addEventListener('click', (e) => {
-        if (e.target.nextSibling.nextSibling.classList.value === 'menu menu_sub') {
-            e.preventDefault()
-            menuSubs.forEach(el => el.classList.remove('menu_active'));
-            e.target.nextSibling.nextSibling.classList.add('menu_active')
-        } 
-    })
-})
+for (let index = 0; index < listItems.length; index++) { 
+  const link = listItems[index].querySelector(".menu__link");          
+    const menuMenu = listItems[index].querySelector(".menu.menu_sub");
+    if (menuMenu !== null && link !== null) {                                          
+        link.onclick = () => {                               
+          menuMenu.classList.toggle("menu_active");
+          return false;
+        }
+    }
+}
