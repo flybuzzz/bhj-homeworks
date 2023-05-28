@@ -9,6 +9,7 @@ for (let resizeButton of resizeButtons) {
         resizeButtons.forEach(button => button.classList.remove('font-size_active'));
         resizeButton.classList.add('font-size_active');
 
+        
         if (this.dataset.size == 'big') {
             book.forEach(item => {
                 item.classList.remove('book_fs-big');
