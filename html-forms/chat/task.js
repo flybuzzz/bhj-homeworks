@@ -26,9 +26,7 @@ textInput.forEach((el) => {
     let textClient = event.target.value;
     let textArray = [...textClient];
 
-    if (event.keyCode === 32) {
-      event.preventDefault()
-    }
+    
     if (
       event.keyCode === 13 &&
       !(textClient == "") &&
